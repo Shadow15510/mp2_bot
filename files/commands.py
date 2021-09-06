@@ -32,7 +32,7 @@ class MPCommands(commands.Cog):
                 embed.add_field(name="Erreur : commande inconnue", value=f"Entrez `{self.prefix}aide` pour avoir la liste des commandes.")
         
         else:
-            embed = discord.Embed(title="Rubrique d'aide", description=f"Entrez : `{self.prefix}aide <commande>` pour plus d'informations.\nLes arguments entre `<>` sont obligatoires.\nLes arguments entre `[]` sont facultatifs.", color=self.color)
+            embed = discord.Embed(title="Rubrique d'aide", description=f"Entrez : `{self.prefix}aide <commande>` pour plus d'informations sur une commande.\nLes arguments entre `<>` sont obligatoires.\nLes arguments entre `[]` sont facultatifs.", color=self.color)
             for cmnd in self.get_commands():
                 embed.add_field(name=cmnd.brief, value=get_syntax(cmnd), inline=False)
         await ctx.send(embed=embed)
