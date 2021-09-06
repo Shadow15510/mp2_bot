@@ -42,7 +42,7 @@ class MPCommands(commands.Cog):
         recherche = " ".join(recherche)
 
         if recherche:
-            mail_bdd = sqlite3.connect("files/mails.db")
+            mail_bdd = sqlite3.connect("bot/files/mails.db")
             cursor = mail_bdd.cursor()
 
             result = cursor.execute(f"""
@@ -53,7 +53,7 @@ class MPCommands(commands.Cog):
             mail_bdd.close()
 
         else:
-            mail_bdd = sqlite3.connect("files/mails.db")
+            mail_bdd = sqlite3.connect("bot/files/mails.db")
             cursor = mail_bdd.cursor()
 
             result = cursor.execute("""

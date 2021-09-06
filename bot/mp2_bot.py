@@ -3,11 +3,11 @@ from discord.ext import commands
 import json
 import os
 
-from files.commands import MPCommands
+from bot.files.commands import MPCommands
 
 
 # Chargement du fichier de configuration
-with open("config.json", "r") as config_file:
+with open("bot/config.json", "r") as config_file:
     config = json.load(config_file)
 
 
