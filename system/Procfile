@@ -1,0 +1,1 @@
+worker: python mp2_bot.py
