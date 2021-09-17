@@ -25,10 +25,10 @@ async def on_ready():
     print("Connecté.")
 
 # Initialisation de la tâche
-@tasks.loop(seconds=5)
-async def cdp_implementation():
-    channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
-    await channel.send("Message")
+# @tasks.loop(seconds=5)
+# async def cdp_implementation():
+#     channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
+#     await channel.send("Message")
 
 # Lancement du bot
 mp2_bot.run(os.environ["token"])
