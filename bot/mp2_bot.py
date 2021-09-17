@@ -21,9 +21,6 @@ mp2_bot.add_cog(MPCommands(config, mp2_bot))
 async def on_ready():
     activity = discord.Activity(type=discord.ActivityType.watching, name=config["PREFIX"] + "aide")
     await mp2_bot.change_presence(activity=activity)
-    
-    # Lancement de la tâche
-    cdp_implementation.start()
 
     print("Connecté.")
 
