@@ -13,7 +13,7 @@ with open("bot/config.json", "r") as config_file:
 
 # Création du bot
 mp2_bot = commands.Bot(command_prefix=config["PREFIX"])
-mp2_bot.add_cog(MPCommands(config))
+mp2_bot.add_cog(MPCommands(config, mp2_bot))
 
 
 # Initialisation du statut personalisé
@@ -21,19 +21,11 @@ mp2_bot.add_cog(MPCommands(config))
 async def on_ready():
     activity = discord.Activity(type=discord.ActivityType.watching, name=config["PREFIX"] + "aide")
     await mp2_bot.change_presence(activity=activity)
+    
+    # Lancement de la tâche
+    cdp_implementation.start()
+
     print("Connecté.")
-
-
-# Initialisation de la tâche
-@tasks.loop(seconds=5)
-async def cdp_implementation():
-    print(config["CDP_CHANNEL_ID"])
-    channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
-    await channel.send("Message")
-
-# Lancement de la tâche
-cdp_implementation.start()
-
 
 # Lancement du bot
 mp2_bot.run(os.environ["token"])

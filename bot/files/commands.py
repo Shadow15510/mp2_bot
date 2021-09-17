@@ -4,9 +4,16 @@ import sqlite3
 
 
 class MPCommands(commands.Cog):
-    def __init__(self, config):
+    def __init__(self, config, bot):
         self.prefix = config["PREFIX"]
         self.color = config["COLOR"]
+        self.bot = bot
+
+    # Initialisation de la tâche
+    @tasks.loop(seconds=5)
+    async def cdp_implementation():
+        channel = self.bot.get_channel(id=config["CDP_CHANNEL_ID"])
+        await channel.send("Message")
 
     @commands.command(help="Afficher les commandes disponibles. Préciser un nom de commande renvoie l'aide détaillée.", brief="Affiche ce panneau")
     async def aide(self, ctx, cmnd: str=None):
