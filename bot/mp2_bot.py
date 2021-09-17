@@ -13,7 +13,7 @@ with open("bot/config.json", "r") as config_file:
 
 # Création du bot
 mp2_bot = commands.Bot(command_prefix=config["PREFIX"])
-mp2_bot.add_cog(MPCommands(config, mp2_bot))
+mp2_bot.add_cog(MPCommands(config))
 
 
 # Initialisation du statut personalisé
