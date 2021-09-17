@@ -28,7 +28,7 @@ async def on_ready():
 @tasks.loop(seconds=5)
 async def cdp_implementation():
     print(config["CDP_CHANNEL_ID"])
-    channel = discord.Client.get_channel(config["CDP_CHANNEL_ID"])
+    channel = discord.Client.get_channel(id=config["CDP_CHANNEL_ID"])
     await channel.send("Message")
 
 # Lancement de la tâche
