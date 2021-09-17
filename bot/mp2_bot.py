@@ -12,7 +12,7 @@ with open("bot/config.json", "r") as config_file:
 
 
 # Création du bot
-mp2_bot = commands.Bot(command_prefix=config["PREFIX"])
+mp2_bot = commands.Bot(command_prefix=config["PREFIX"], description="Bot de la MP 2")
 mp2_bot.add_cog(MPCommands(config))
 
 
