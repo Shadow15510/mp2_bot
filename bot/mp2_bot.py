@@ -26,7 +26,7 @@ async def on_ready():
     print("Connecté.")
 
 # Initialisation de la tâche
-@tasks.loop(seconds=10)
+@tasks.loop(hours=config["CDP_REFRESH_RATE"])
 async def cdp_implementation():
     rss = get_cdp_rss()
     
@@ -37,7 +37,7 @@ async def cdp_implementation():
         else: embed = discord.Embed(title="Notification Cahier de Prépa", description=f"{len(rss)} nouveaux documents ont été mis en ligne", color=config["COLOR"])
         
         for title, link in rss:
-            embed.add_field(name=title, value=link)
+            embed.add_field(name=title, value=link, inline=False)
         
         await channel.send(embed=embed)
 

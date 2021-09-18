@@ -34,6 +34,7 @@ def get_cdp_rss():
 
     if rss:
         # Sauvegarde de la dernière date
+        print(times)
         lasttime = max(times)
         requests.get(f"https://odyssee.pythonanywhere.com/send/{os.environ['api_token']}/{time.strftime('%a, %d %b %Y %H:%M:%S', lasttime)}")
 
