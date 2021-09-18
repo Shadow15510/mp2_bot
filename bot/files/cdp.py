@@ -6,20 +6,21 @@ import time
 
 
 def get_cdp_rss():
+    # Récupération de la dernière date
     lasttime = requests.get(f"https://odyssee.pythonanywhere/read/{os.environ['api_token']}").text
     lasttime = time.strptime(lastime, "%a, %d %b %Y %H:%M:%S")
 
-
+    # Connexion au site et stockage du cookie de connexion
     payload = {"login": os.environ["cdp_login"], "motdepasse": os.environ["cdp_password"], "connexion": 1}
-
     r = requests.post("https://cahier-de-prepa.fr/mp2-malherbe/ajax.php", data=payload)
     cookies = {"CDP_SESSION": r.cookies["CDP_SESSION"]}
 
+    # Requête sur les flux RSS
     cdp = requests.get("https://cahier-de-prepa.fr/mp2-malherbe/rss/2d2f630bda45d7b1d0c3/rss.xml", cookies=cookies)
-
     cdp = BeautifulSoup(cdp.text, features="html5lib")
     cdp = cdp.find_all("item")
 
+    # Analyse et stockage des informations
     rss = []
     for item in cdp:
         item_time = item.select_one("pubDate").text
@@ -36,9 +37,10 @@ def get_cdp_rss():
             ))
 
     if rss:
+        # Sauvegarde de la dernière date
         lasttime = max(times)
         requests.get(f"https://odyssee.pythonanywhere/read/{os.environ['api_token']}/{time.strftime('%a, %d %b %Y %H:%M:%S', lasttime)}")
 
         return rss
-    
+
 
