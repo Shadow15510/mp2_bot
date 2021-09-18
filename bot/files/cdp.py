@@ -31,15 +31,12 @@ def get_cdp_rss():
             times.append(item_time)
             title = item.select_one("title").text
             link = item.text.splitlines()[2]
-            rss.append((
-                title[9: title.find("]]>", 10)],
-                link.strip()
-            ))
+            rss.append((title[9: title.find("]]>", 10)], link.strip()))
 
     if rss:
         # Sauvegarde de la dernière date
         lasttime = max(times)
-        requests.get(f"https://odyssee.pythonanywhere/read/{os.environ['api_token']}/{time.strftime('%a, %d %b %Y %H:%M:%S', lasttime)}")
+        requests.get(f"https://odyssee.pythonanywhere/send/{os.environ['api_token']}/{time.strftime('%a, %d %b %Y %H:%M:%S', lasttime)}")
 
         return rss
 
