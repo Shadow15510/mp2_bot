@@ -5,7 +5,11 @@ import requests
 import time
 
 
-def get_cdp_rss(lasttime):
+def get_cdp_rss():
+    lasttime = requests.get(f"https://odyssee.pythonanywhere/read/{os.environ['api_token']}").text
+    lasttime = time.strptime(lastime, "%a, %d %b %Y %H:%M:%S")
+
+
     payload = {"login": os.environ["cdp_login"], "motdepasse": os.environ["cdp_password"], "connexion": 1}
 
     r = requests.post("https://cahier-de-prepa.fr/mp2-malherbe/ajax.php", data=payload)
@@ -22,7 +26,7 @@ def get_cdp_rss(lasttime):
         item_time = time.strptime(item_time[: item_time.find("+")], "%a, %d %b %Y %H:%M:%S ")
 
         times = []
-        if item_time >= lastime:
+        if item_time >= lasttime:
             times.append(item_time)
             title = item.select_one("title").text
             link = item.text.splitlines()[2]
@@ -31,5 +35,10 @@ def get_cdp_rss(lasttime):
                 link.strip()
             ))
 
-        return rss, max(times)
+    if rss:
+        lasttime = max(times)
+        requests.get(f"https://odyssee.pythonanywhere/read/{os.environ['api_token']}/{time.strftime('%a, %d %b %Y %H:%M:%S', lasttime)}")
+
+        return rss
+    
 
