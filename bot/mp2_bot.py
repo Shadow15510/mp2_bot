@@ -26,7 +26,7 @@ async def on_ready():
     print("Connecté.")
 
 # Initialisation de la tâche
-@tasks.loop(seconds=10)
+@tasks.loop(hours=config["CDP_REFRESH_RATE"])
 async def cdp_implementation():
     rss = get_cdp_rss()
     
