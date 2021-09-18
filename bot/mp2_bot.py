@@ -32,10 +32,14 @@ async def cdp_implementation():
     
     if rss:
         channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
+        
+        if len(rss) == 1: embed = discord.Embed(title="Notification Cahier de Prépa", description="Un nouveau document a été mis en ligne", color=config["COLOR"])
+        else: embed = discord.Embed(title="Notification Cahier de Prépa", description=f"{len(rss)} nouveaux documents ont été mis en ligne", color=config["COLOR"])
+        
         for title, link in rss:
-            embed = discord.Embed(title="Notification Cahier de Prépa", description="Un nouveau document a été mis en ligne", color=config["COLOR"])
             embed.add_field(name=title, value=link)
-            await channel.send(embed=embed)
+        
+        await channel.send(embed=embed)
 
 
 # Lancement du bot
