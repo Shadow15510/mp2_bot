@@ -36,8 +36,8 @@ async def cdp_implementation():
             embed = discord.Embed(title="Notification Cahier de Prépa", description="Un nouveau document a été mis en ligne", color=config["COLOR"])
             embed.add_field(name=title, value=link)
             await channel.send(embed=embed)
-    else:
-        await channel.send("RAS")
+
+    await channel.send("RAS")
 
 # Lancement du bot
 mp2_bot.run(os.environ["token"])

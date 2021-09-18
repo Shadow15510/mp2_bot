@@ -10,6 +10,11 @@ def get_cdp_rss():
     lasttime = requests.get(f"https://odyssee.pythonanywhere/read/{os.environ['api_token']}").text
     lasttime = time.strptime(lastime, "%a, %d %b %Y %H:%M:%S")
 
+    # /!\ TEST /!\ #
+    print("Récupération dernière date")
+    print(f"... {lasttime}")
+    # /!\ TEST /!\ #
+
     # Connexion au site et stockage du cookie de connexion
     payload = {"login": os.environ["cdp_login"], "motdepasse": os.environ["cdp_password"], "connexion": 1}
     r = requests.post("https://cahier-de-prepa.fr/mp2-malherbe/ajax.php", data=payload)
