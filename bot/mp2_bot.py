@@ -4,6 +4,7 @@ import json
 import os
 
 from bot.files.commands import MPCommands
+from bot.files.cdp import get_cdp_rss
 
 
 # Chargement du fichier de configuration
@@ -24,11 +25,17 @@ async def on_ready():
     # cdp_implementation.start()
     print("Connecté.")
 
-# Initialisation de la tâche
-# @tasks.loop(seconds=5)
-# async def cdp_implementation():
-#     channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
-#     await channel.send("Message")
+Initialisation de la tâche
+@tasks.loop(seconds=10)
+async def cdp_implementation():
+    if config["SEND"]:
+        config["SEND"] = 0
+        with open("bot/config.json", "w") as file:
+            file.write(config)
+
+
+        channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
+        await channel.send("Message")
 
 # Lancement du bot
 mp2_bot.run(os.environ["token"])
