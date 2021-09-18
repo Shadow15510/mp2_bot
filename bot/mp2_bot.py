@@ -25,7 +25,7 @@ async def on_ready():
     # cdp_implementation.start()
     print("Connecté.")
 
-Initialisation de la tâche
+# Initialisation de la tâche
 @tasks.loop(seconds=10)
 async def cdp_implementation():
     if config["SEND"]:
