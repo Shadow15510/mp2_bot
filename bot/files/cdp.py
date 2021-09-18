@@ -26,7 +26,7 @@ def get_cdp_rss():
         item_time = item.select_one("pubDate").text
         item_time = time.strptime(item_time[: item_time.find("+")], "%a, %d %b %Y %H:%M:%S ")
 
-        if item_time >= lasttime:
+        if item_time > lasttime:
             times.append(item_time)
             title = item.select_one("title").text
             link = item.text.splitlines()[2]
