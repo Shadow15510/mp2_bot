@@ -28,8 +28,9 @@ async def on_ready():
 # Initialisation de la tâche
 @tasks.loop(seconds=10)
 async def cdp_implementation():
-    # rss = get_cdp_rss()
+    rss = get_cdp_rss()
     channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
+    
 
     # if rss:
     #     for title, link in rss:
