@@ -29,16 +29,14 @@ async def on_ready():
 @tasks.loop(seconds=10)
 async def cdp_implementation():
     rss = get_cdp_rss()
-    channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
     
+    if rss:
+        channel = mp2_bot.get_channel(id=config["CDP_CHANNEL_ID"])
+        for title, link in rss:
+            embed = discord.Embed(title="Notification Cahier de Prépa", description="Un nouveau document a été mis en ligne", color=config["COLOR"])
+            embed.add_field(name=title, value=link)
+            await channel.send(embed=embed)
 
-    # if rss:
-    #     for title, link in rss:
-    #         embed = discord.Embed(title="Notification Cahier de Prépa", description="Un nouveau document a été mis en ligne", color=config["COLOR"])
-    #         embed.add_field(name=title, value=link)
-    #         await channel.send(embed=embed)
-
-    await channel.send("RAS")
 
 # Lancement du bot
 mp2_bot.run(os.environ["token"])

@@ -39,6 +39,5 @@ def get_cdp_rss():
 
         return rss
 
-print(get_cdp_rss())
 
 
