@@ -21,6 +21,9 @@ with open("bot/le_duff.tex", "r") as quotes_file:
         "\\lvert": "|",
         "\\rvert": "|",
         "\\cdot": "×",
+        "\\sin": "sin",
+        "\\cos": "cos",
+        "\\ln": "ln",
         
         "\t": "",
         "\\noindent": "",
