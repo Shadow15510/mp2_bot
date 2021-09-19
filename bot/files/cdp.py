@@ -7,7 +7,7 @@ import time
 
 def get_cdp_rss():
     # Récupération de la dernière date
-    lasttime = requests.get(f"https://odyssee.pythonanywhere.com/read/{os.environ["api_token"]}").text
+    lasttime = requests.get(f"https://odyssee.pythonanywhere.com/read/{os.environ['api_token']}").text
     print(lasttime)
     lasttime = time.strptime(lasttime, "%d:%m:%H:%M")
 
@@ -32,5 +32,5 @@ def get_cdp_rss():
 
     if rss:
         lasttime = max(doc_times)
-        requests.get(f"https://odyssee.pythonanywhere.com/send/{os.environ["api_token"]}/{time.strftime('%d:%m:%H:%M', lasttime)}")
+        requests.get(f"https://odyssee.pythonanywhere.com/send/{os.environ['api_token']}/{time.strftime('%d:%m:%H:%M', lasttime)}")
         return rss
