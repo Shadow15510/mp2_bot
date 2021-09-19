@@ -36,7 +36,7 @@ def get_cdp_rss():
             rss.append((
                 title.text,
                 pub_date[12:],
-                description.text.replace("\xa0", " ").split(", "),
+                description.text.replace("\xa0", " ").split(", ")[1],
                 f"https://cahier-de-prepa.fr/mp2-malherbe/{title['href']}"
             ))
 
