@@ -15,8 +15,7 @@ with open("bot/config.json", "r") as config_file:
 with open("bot/le_duff.tex", "r") as quotes_file:
     quotes = []
     format_patterns = {
-        "\\og ": "\"",
-        " \\fg": "\"",
+        "\"": "'",
         "~": " ",
         "lvert": "|",
         "rvert": "|",
@@ -33,7 +32,7 @@ with open("bot/le_duff.tex", "r") as quotes_file:
                 quote = quote.replace(pattern, format_patterns[pattern])
             if "emph" in quote:
                 quote = quote.replace("emph{", "*").replace("}", "*")
-            quote = quote.replace("_", "\\_")
+            quote = quote.replace("_", "\\_").replace("og ", "\"").replace(" fg", "\"")
             quotes.append(quote.strip().rstrip())
 
 
