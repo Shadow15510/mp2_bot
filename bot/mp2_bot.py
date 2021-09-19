@@ -18,23 +18,22 @@ with open("bot/le_duff.tex", "r") as quotes_file:
         "\\og ": "\"",
         " \\fg": "\"",
         "~": " ",
-        "\\lvert": "|",
-        "\\rvert": "|",
-        "\\cdot": "×",
-        "_": "\\_",
+        "lvert": "|",
+        "rvert": "|",
+        "cdot": "×",
         "\t": "",
-        "\\noindent": "",
-        "\\\\": "",
-        "$": "",
+        "noindent": "",
         "\\": "",
+        "$": "",
     }
 
     for quote in quotes_file.read().splitlines():
         if quote.startswith("\t"):
             for pattern in format_patterns:
                 quote = quote.replace(pattern, format_patterns[pattern])
-            if "\\emph" in quote:
-                quote = quote.replace("\\emph{", "*").replace("}", "*")
+            if "emph" in quote:
+                quote = quote.replace("emph{", "*").replace("}", "*")
+            quote = quote.replace("_", "\\_")
             quotes.append(quote.strip().rstrip())
 
 
