@@ -21,7 +21,7 @@ with open("bot/le_duff.tex", "r") as quotes_file:
         "\\lvert": "|",
         "\\rvert": "|",
         "\\cdot": "×",
-        "_": "\_"
+        "_": "\_",
 
         "\\": ""
         "\t": "",
