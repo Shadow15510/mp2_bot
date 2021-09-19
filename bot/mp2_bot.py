@@ -37,7 +37,7 @@ async def cdp_implementation():
         else: embed = discord.Embed(title="Notification Cahier de Prépa", description=f"{len(rss)} nouveaux documents ont été mis en ligne", color=config["COLOR"])
         
         for title, pub_date, description, link in rss:
-            embed.add_field(name=title, value=f"`({pub_date}) {description}`\n> {link}", inline=False)
+            embed.add_field(name=title, value=f"{pub_date.capitalize()} {description}\n> {link}", inline=False)
         
         await channel.send(embed=embed)
 
