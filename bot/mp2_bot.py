@@ -23,7 +23,7 @@ with open("bot/le_duff.tex", "r") as quotes_file:
         "\\cdot": "×",
         "_": "\_",
 
-        "\\": ""
+        "\\": "",
         "\t": "",
         "\\noindent": "",
         "\\\\": "",
