@@ -12,9 +12,34 @@ with open("bot/config.json", "r") as config_file:
     config = json.load(config_file)
 
 
+with open("bot/le_duff.tex", "r") as quotes_file:
+    quotes = []
+    format_patterns = {
+        "\\og ": "\"",
+        " \\fg": "\"",
+        "~": " ",
+        "\\lvert": "|",
+        "\\rvert": "|",
+        "\\cdot": "×",
+        
+        "\t": "",
+        "\\noindent": "",
+        "\\\\": "",
+        "$": ""
+    }
+
+    for quote in quotes_file.read().splitlines():
+        if quote.startswith("\t"):
+            for pattern in format_patterns:
+                quote = quote.replace(pattern, format_patterns[pattern])
+            if "\\emph" in quote:
+                quote = quote.replace("\\emph{", "*").replace("}", "*")
+            quotes.append(quote.strip().rstrip())
+
+
 # Création du bot
 mp2_bot = commands.Bot(command_prefix=config["PREFIX"])
-mp2_bot.add_cog(MPCommands(config))
+mp2_bot.add_cog(MPCommands(config, quotes))
 
 
 # Initialisation du statut personalisé

@@ -1,12 +1,15 @@
 import discord
 from discord.ext import commands
 import sqlite3
+from random import choice
 
 
 class MPCommands(commands.Cog):
-    def __init__(self, config):
+    def __init__(self, config, quotes):
         self.prefix = config["PREFIX"]
         self.color = config["COLOR"]
+
+        self.quotes = quotes
 
     @commands.command(help="Afficher les commandes disponibles. Préciser un nom de commande renvoie l'aide détaillée.", brief="Affiche ce panneau")
     async def aide(self, ctx, cmnd: str=None):
@@ -79,4 +82,9 @@ class MPCommands(commands.Cog):
             embed.add_field(name="Erreur", value="Aucune adresse mail ne correspond à la recherche effectuée.", inline=False)
 
         await ctx.send(embed=embed)
+
+    @commands.command(help="Renvoie une citation de M. Le Duff au hasard", brief="Citation de M. Le Duff")
+    async def citation(self, ctx):
+        await ctx.send(f"> {choice(self.quotes)}")
+
 
