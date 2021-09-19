@@ -8,7 +8,6 @@ import time
 def get_cdp_rss():
     # Récupération de la dernière date
     lasttime = requests.get(f"https://odyssee.pythonanywhere.com/read/{os.environ['api_token']}").text
-    print(lasttime)
     lasttime = time.strptime(lasttime, "%d:%m:%H:%M")
 
     # Connexion au site et stockage du cookie de connexion
