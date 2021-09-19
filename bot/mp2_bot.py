@@ -21,13 +21,12 @@ with open("bot/le_duff.tex", "r") as quotes_file:
         "\\lvert": "|",
         "\\rvert": "|",
         "\\cdot": "×",
-        "_": "\_",
-
-        "\\": "",
+        "_": "\\_",
         "\t": "",
         "\\noindent": "",
         "\\\\": "",
-        "$": ""
+        "$": "",
+        "\\": "",
     }
 
     for quote in quotes_file.read().splitlines():
