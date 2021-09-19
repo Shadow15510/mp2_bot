@@ -22,12 +22,22 @@ def get_cdp_rss():
 
     rss, doc_times = [], []
     for document in cdp:
-        doc_time = time.strptime(document.select_one("p").text, "Publication le %d/%m à %Hh%M")
+        pub_date, description = document.select("p")
+        pub_date = pub_date.text
+
+        doc_time = time.strptime(pub_date, "Publication le %d/%m à %Hh%M")
 
         if doc_time > lasttime:
             doc_times.append(doc_time)
+
             title = document.select_one("a")
-            rss.append((title.text, f"https://cahier-de-prepa.fr/mp2-malherbe/{title['href']}"))
+
+            rss.append((
+                title.text,
+                pub_date[12:],
+                description.text.replace("\xa0", " "),
+                f"https://cahier-de-prepa.fr/mp2-malherbe/{title['href']}"
+            ))
 
     if rss:
         lasttime = max(doc_times)
