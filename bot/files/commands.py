@@ -69,7 +69,7 @@ class MPCommands(commands.Cog):
                 else: mails[name] = [address]
 
             if recherche: embed = discord.Embed(title="Mail", description=f"Adresse(s) mail(s) correspondant à la recherche : '{recherche}'", color=self.color)
-            else: discord.Embed(title="Mail", description=f"Adresses mails connues", color=self.color)
+            else: embed = discord.Embed(title="Mail", description=f"Adresses mails connues", color=self.color)
             
             for name in mails:
                 embed.add_field(name=name, value="\n".join([f"`{address}`" for address in mails[name]]), inline=False)
