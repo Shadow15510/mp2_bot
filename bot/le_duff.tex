@@ -7,10 +7,13 @@
 \newcommand{\org}{Lycée Malherbe}
 
 \input{~/latex/book.tex}
+\renewcommand{\thesection}{\arabic{section}}
 
 \begin{document} \maketitle
 
-\section*{Vous êtes nuls...}
+\tableofcontents
+
+\section{Vous êtes nuls...}
 	
 	\noindent \emph{Toutes les 2 minutes} \og Vous êtes nuls... \fg \\
 	\og Le niveau baisse \fg \\
@@ -58,7 +61,7 @@
 	\og Qu'est-ce que je voulais dire... Ah oui ! Vous êtes nuls ! \fg \\
 	\og Mais quel andouille celui-là ! \fg \\
 	
-\section*{...Le reste de l'humanité aussi}
+\section{...Le reste de l'humanité aussi}
  
 	\noindent \og Christophe Colomb il a traversé l'Atlantique en 3 mois, il était pas très fort \fg \\
 	\og La roue ça sert plus que l'iPhone 11. Peut-être qu'ils auraient pu le vendre à 12 000 euros. Ils sont pas très forts chez Apple \fg \\
@@ -77,8 +80,9 @@
 	\og Qu'est-ce que c'est nul Zola... \fg \\
 	\og Oui alors le niveau baisse, mais l'Homme préhistorique avait quand même du mal avec les intégrations par parties. \fg \\
 	\og Vous savez pourquoi Bush a perdu aux échecs? Il y a un fou qui lui a pris deux tours \fg \\
+	\og Y sont cons ces japonais... \fg \\
 
-\section*{C'est marrant les maths}
+\section{C'est marrant les maths}
 
 	\noindent \og Les maths je trouve ça ludique \fg \\
 	\og La formule de Taylor ça marche pas bien pour les fractions rationnelles. On dérive une fois, ça va, on dérive deux fois, on vomit \fg \\
@@ -102,7 +106,7 @@
 	\og Ma passion c'est tuer les dominants ! \fg \\
 	\og J'essaye de finir une séquence vendredi, j'aime bien voyez ? Ça fait pédagogue ! \fg \\
 
-\section*{Les élèves c'est bizarre}
+\section{Les élèves c'est bizarre}
 
 	\noindent \og Vous ne respectez pas les lois de la thermodynamique ? \fg \\
 	\og Vous le direz à votre psychiatre : "mes amis pour la vie c'est les complexes" \fg \\
@@ -112,7 +116,7 @@
 	\og Vous ne pensez rien, c'est gênant. \fg \\
 	\og Je peux pas vous dire pourquoi vous n'y arrivez pas ! Il faut aller voir un psychiatre ! Vous avez peut-être été battu pas des exponentielles quand vous étiez petits \fg \\
  
-\section*{Ballecouilles}
+\section{Ballecouilles}
  
 	\noindent \og D'accord, on s'en fout \fg \\
 	\og Là il y en a qui vont me dire "oui mais si $j = 1$ ça marche pas blablabla..." NE M'EMMERDEZ PAS! \fg \\
@@ -122,7 +126,7 @@
 	\og Moi, j'ai des voitures pourries~: ça ne m'embête pas d'emboutir une voiture... \fg \\
 	\og Vas-y, ferme ta gueule ! \fg \emph{en parlant à l'ordi} \\
 
-\section*{Le saviez-vous ?}
+\section{Le saviez-vous ?}
 
 	\noindent \og Vous trouvez que ça existe les entiers? Bah non, ça existe pas les entiers !! \fg \\
 	\og Ça on vous le dit pas, mais dans 4 milliards d'années le soleil il s'éteint, et ça, ça me fait peur \fg \\
@@ -143,8 +147,11 @@
 	\og Holà Roger, ça chauffe là ! \fg \\
 	\og C'est une grande invention ! Y a eu le feu... Puis pas grand'chose pendant des années... Et là POUF ! Le calcul différenciel ! \fg \\
 	\og C'était le théorème de qui "Ben oui" ? \fg \\
+	\og Je vous conspute. Voila. C'est pas gentil. \fg \\
+	\og En algèbre linéaire on ne récussite pas. \fg \\
+	\og Oui, j'ai encore rêvé de vous... \fg \\
 
-\section*{Je suis fort quand même}
+\section{Je suis fort quand même}
 
 	\noindent \og J'ai écrit des bêtises. Bon, c'est juste \fg \\
 	\og Rohh j'suis un génie \fg \\
@@ -154,9 +161,9 @@
 	\og Dans un club de bridge, il y à environ 3/4 de profs de maths. Les autres profs ils pensent qu'on ne travaille pas, nous les profs de maths. Mais c'est parce qu'on est plus intelligents qu'eux et plus efficace \fg \\
 	\og Je suis fort en heure aussi \fg \emph{après avoir deviné l'heure} \\
 	\og On va m'accuser de devinisme \fg \emph{écrit la solution avant de faire l'exercice} \\
-	\og Je vous ai appris à avoir peur ! \fg
+	\og Je vous ai appris à avoir peur ! \fg \\
 
-\section*{Et en plus j'ai une vie passionnante}
+\section{Et en plus j'ai une vie passionnante}
 
 	\noindent \og Moi j'ai raté mon permis : j'ai grillé un feu, l'examinateur à pas voulu me le donner, c'est pas gentil, je l'avais pas vu \fg \\
 	\og J'ai regardé les lettres de motivation, il y a une fille qui est mannequin. Moi j'ai dit que j'étais d'accord \fg \\
@@ -172,20 +179,21 @@
 	\og L'épidémie de voitures cassées à touché ma voiture. \fg \\
 	\og Vous avez passé de bonnes vacances ? Moi aussi: une voiture en moins. Il y a pas a dire, deux tonnes à 40km/h, il y a plus rien en face. C'est bon, il y a pas eu de blessés~! \fg \\
 
-\section*{Et j'ai des références culturelles}
+\section{Et j'ai des références culturelles}
 
 	\noindent \og Vous vous trouvez bien démuni l'hiver arrivant parce que ça merdouille \fg \\
 	\og Aujourd'hui je vous aime bien, avant je vous ai haï... Voilà ça fait un peu tragédie grecque \fg \\
 	\og J'allais me fourvoyer. J'aime bien le mot fourvoyer \fg \\
 	\og Est-ce que c'est symétrique? Oui oui d'aprés le théorème du oui-oui. Vous connaissez Oui-Oui ? Vous aussi vous avez été traumatisés ? Il y a pire, il y a Martine, vous connaissez Martine aussi ? Ah Martine c'est... Non je peux pas le dire \fg \\
-	\og C'est beau, non? C'est pour ça que pour Leibniz tout va bien dans le meilleur des mondes. Et Guernica c'était peut être des méchants \fg \\
+	\og C'est beau, non? C'est pour ça que pour Leibniz tout va bien dans le meilleur des mondes. Et Guernica c'était peut être des méchants \fg \\	
+	\og Comment ça s'appelle quand on dit "intrusions malveillante" plutôt que "les sales terroristes qui vont nous couper la tête" ? Ah oui ! Un euphémisme ! \fg \\
  
-\section*{De Carlos Ghosn}
+\section{De Carlos Ghosn}
 
 	\noindent \og Si Carlos Goshn il multiplie sa fortune par 1,01 tous les ans et que vous multipliez la vôtre par 1,1 vous allez le dépasser... Mais il sera sorti de prison avant \fg \\
 	\og Regretterez pas de pas avoir Polytechnique, regardez Carlos Goshn : il est en prison. Il est bête, il a 500 millions il en veut 10 de plus. Si ça avait été un footeux on aurait compris, ils sont cons \fg \\
 
-\section*{LV3 catholicisme} 
+\section{LV3 catholicisme} 
  
 	\noindent \og Le bon Dieu dans son immense mansuétude à décidé de faire un critère pour savoir qui doit être ingénieur ou pas \fg \\
 	\og Le bon Dieu il est pas gentil avec vous et les sorcières non plus \fg \\
@@ -199,7 +207,7 @@
 	\og Dieu existe c'est une évidence ! \fg \\
 	\og Je vous le dit mes bien chers frères... \fg \\
 
-\section*{Racisme d'ici et d'ailleurs}
+\section{Racisme d'ici et d'ailleurs}
 
 	\noindent \og Les réfugiés ils pourraient passer les épreuves de l'ENS comme ça ils seraient au chaud pendant 6 heures \fg \\
 	\og Comment vous traduisez «Bouillabaisse» en chinois? Bah on peut pas, ça existe pas! En plus si on leur en donne à manger ils meurent... \fg \\
@@ -214,7 +222,7 @@
 	\og Il y a 17 pavages du plan. Apparemment les arabes le savaient. Salauds d'arabes. \fg \\
 	\og Pourquoi on est de la même espèce que ces esclaves de noirs qui sont pas de la même couleur que nous~? Et pourquoi on est pas la même espèce que Cro Magnon~? \fg \\
 
-\section*{Politique et totalitarisme}
+\section{Politique et totalitarisme}
 
 	\noindent \og Le pensionnat ça avait du bon, comme les jeunesses nazies. La rigueur ça a du bon \fg \\
 	\og On est envahi par les Klein. Les nazis ont pas fini leur boulot \fg \\
@@ -227,9 +235,9 @@
 	\og Dans le doute on est tous un peu juif \fg \\
 	\og Les allemands ils avaient des règles \fg \\
 	\og Moi je suis pour la démocratie. Mais soviétique ! \fg \\
-	\og Je vais l'appeler $R_{n,N}$... C'est même pas un parti... \fg
+	\og Je vais l'appeler $R_{n,N}$... C'est même pas un parti... \fg \\
 
-\section*{Coach de vie}
+\section{Coach de vie}
 
 	\noindent \og Vos malheurs viennent d'où ? D'être venu en classe préparatoire ? Oui, bon vous auriez pu aller en psycho aussi \fg \\
 	\og Vous noterez $\sum A_{i,k} B_{k,j}$ dans votre CV, c'est mieux que humanitaire \fg \\
@@ -237,31 +245,32 @@
 	\og Si au lieu de me dire bonjour vous me dites "séries à termes positifs" je suis content \fg \\
 	\og Si vous vouliez réfléchir fallait aller en khâgne, ici on apprend par coeur et on calcul! \fg \\
 
-\section*{Logique élémentaire}
+\section{Logique élémentaire}
 
 	\noindent \og C'est tellement dur que c'est facile \fg \\
 	\og Si il y a pas de problème, il y a pas de problème mais le problème c'est que souvent il y a des problèmes \fg \\
 	\og J'aime bien mettre vocabulaire quand c'est du vocabulaire \fg \\
 	\og La convergence simple c'est simple \fg \\
 	\og Si votre GPS met une heure à trouver le chemin, allez-y à pied \fg \\
+	\og Y a une méthode~: c'est de mettre n'importe quoi. Mais ça ne marche pas. \fg \\
 
-\section*{Les "amis" de M.Le Duff}
+\section{Les "amis" de M.Le Duff}
 
 	\noindent \og Je vais faire toc toc à côté \fg Bonjour Mr Pétel, $n² = n(n-1) + n$, association d'idée ?\og et là, vie de merde... \fg espérence, variance\og \fg \\
 	\og Mme Le Mercier c'est la seule personne que je respecte ici \fg \emph{en parlant de la secrétaire} \\
 	\og Je ne vous aime pas \fg \emph{en parlant de nous} \\
 	\og Mon prof de MP se retournerait dans... Ah non, il est pas mort ! \fg \\
 
-\section*{Les gentils mots de M.Le Duff}
+\section{Les gentils mots de M.Le Duff}
 
 	 \noindent \emph{Aucun contenu trouvé.} \\
  
-\section*{WTF Random}
+\section{WTF Random}
 
 	\noindent \og C'est quoi cette merde~? \fg \\
 	\og On va commencer le cours sur \emph{regarde sa montre} PUTAIN~! \fg \\
 	\emph{Répond à un élève} \og Oui votre honneur~? \fg \\
-	\og L'ensemble des $\lambda$ on l'appelle le spectre, comme le méchanta dans James Bond \fg \\
+	\og L'ensemble des $\lambda$ on l'appelle le spectre, comme le méchant dans James Bond \fg \\
 	\og Chaque année il y a un élève qui glisse sous l'estrade : ils y sont encore \fg \\
 	\og Très bien: 1, 2, 3 nous irons au bois \fg \emph{(raisonnement en 3 étapes)} \\
 	\og On fait une projection de la projection. Vous avez jamais fait de selfie de vos selfies~? \fg \\
@@ -271,12 +280,15 @@
 	\og Ça c'est la fonction truc et ça c'est toto de la matrice \fg \\
 	\og Ça me rappelle quoi~? La sauce blanche~? \fg \\
 	\og Ça va vous avez votre café, votre petit dèj', vous allez prendre votre douche aussi~? \fg \\
-	\og Et là : Amazing! \fg \\
+	\og Et là : Amazing~! \fg \\
 	\og Vous me le dites si vous trouvez un mouton à cinq pattes. \fg \\
 	\og Let x be a réel... \fg \\
 	\og Il n'y a pas de points pour les performances artistiques aux concours. C'est dommage... \fg \\
 	\og D'abord c'est amazing, c'est incroyable, c'est fabuleux \fg \\
 	\og Oouuuhh le paquebot, il est booôô... \fg \\
 	\og Elle arrive pas à tout avaler [...] et elle dégueule... \fg \emph{en parlant de sa livebox} \\
+	\og Mais si elle meurt comme une grosse merde~!? \fg \\
+	\og Je ne suis pas d'accord~: on ne claque pas des doigts~! \fg \\
+	
 
 \end{document}
