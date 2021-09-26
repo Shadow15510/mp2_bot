@@ -27,7 +27,7 @@ def get_cdp_rss():
 
         doc_time = time.strptime(pub_date, "Publication le %d/%m à %Hh%M")
 
-        if doc_time > lasttime:
+        if doc_time > lasttime and "Document" in description:
             doc_times.append(doc_time)
 
             title = document.select_one("a")
