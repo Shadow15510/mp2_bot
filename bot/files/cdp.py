@@ -27,6 +27,8 @@ def get_cdp_rss():
 
         doc_time = time.strptime(pub_date, "Publication le %d/%m à %Hh%M")
 
+        description = description.text
+
         if doc_time > lasttime and "Document" in description:
             doc_times.append(doc_time)
 
@@ -35,7 +37,7 @@ def get_cdp_rss():
             rss.append((
                 title.text,
                 pub_date[12:],
-                description.text.split(", ")[-1],
+                description.split(", ")[-1],
                 f"https://cahier-de-prepa.fr/mp2-malherbe/{title['href']}"
             ))
 
