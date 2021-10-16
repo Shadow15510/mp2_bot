@@ -22,12 +22,12 @@ def get_cdp_rss():
 
     rss, doc_times = [], []
     for document in cdp:
-        pub_date, description = document.select("p")
-        pub_date = pub_date.text
+        
+        pub_date, description = document.select("p")[:2]
+        pub_date = pub_date.text[:28]
+        description = description.text
 
         doc_time = time.strptime(pub_date, "Publication le %d/%m à %Hh%M")
-
-        description = description.text
 
         if doc_time > lasttime and "Document" in description:
             doc_times.append(doc_time)
