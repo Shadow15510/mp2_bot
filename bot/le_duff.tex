@@ -1,20 +1,50 @@
 \documentclass[french, a4paper, openany]{book}
 
-\newcommand{\docname}{Les very belles citations de Mr Le Duff}
-\newcommand{\authorname}{Les gentils MP 2}
-\newcommand{\dmy}{}
-\newcommand{\years}{2020 — 2022}
-\newcommand{\org}{Lycée Malherbe}
+% General packages
+\usepackage{amsfonts, amssymb, amsthm}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{mathtools}
 
-\input{~/latex/book.tex}
+\usepackage{fancyhdr, fancyvrb}
+\usepackage{lastpage}
+\usepackage[left=2.0cm, right=2.0cm, top = 2.0cm, bottom = 2.0cm]{geometry}
+\usepackage{hyperref}
+\hypersetup{hyperindex=true, colorlinks, linkcolor=blue, urlcolor=blue}
+\everymath{\displaystyle}
+
+
+% Language
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+
+% Pagestyle
+\everymath{\displaystyle}
+
+\pagestyle{fancy}
+\fancypagestyle{plain}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{\huge{\sc Les very belles citations de Mr Le Duff}}
+\author{\LARGE{Les gentils MP 2}}
+\date{\Large{2020 — 2022}}
+
+\lhead{}
+\rhead{Les very belles citations de Mr Le Duff}
+\lfoot{Les gentils MP 2}
+\cfoot{\thepage\ $|$ \pageref{LastPage}}
+\rfoot{2020 — 2022}
+
+
 
 \begin{document} \maketitle
 
-\tableofcontents \newpage
+\section*{Vous êtes nuls...}
 
-\chapter{Vous êtes nuls...}
-
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \emph{Toutes les 2 minutes} \og Vous êtes nuls... \fg \\
 	\og Le niveau baisse \fg \\
@@ -42,7 +72,7 @@
 	\og Vous avez pas l'air d'être très fort \fg \emph{en faisant une démonstration de physique} \\
 	\og C'est bien, vous êtes forts, vous savez que $\lvert z_1 \cdot z_2 \rvert = \lvert z_1 \rvert \cdot \lvert z_2 \rvert$, on va progresser. Mais vous êtes nuls bande d'en... Vous savez rien! \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Vous voulez la médaille Field~? Ouaip, ben... dépêchez-vous~! \fg \\
 	\og Bah non parce que vous avez rien foutu au lycée~! \fg \\
@@ -78,10 +108,13 @@
 	\og On pourrait réfléchir, mais c'est pas vraiment au programme. \fg \\
 	\og Vous êtes là~: "Ah, on va devenir intelligent~!". Non. \fg \\
 	\og C'est quoi l'outil~? Ben le $\log$ bande d'andouilles~! \fg \\
+	\og Y a quelqu'un qui m'a fait ça~! \emph{une majoration inutile} Je l'ai insulté~! \fg \\
+	\og En deuxième année, on oublie ce qu'on a fait en première [année]. \emph{plus bas} Pour certain c'est pas trop dur... \fg \\
+	\og Tenez, on va agresser un peu les étudiants~! \fg \\
 	
-\chapter{...Le reste de l'humanité aussi}
+\section*{...Le reste de l'humanité aussi}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Christophe Colomb il a traversé l'Atlantique en 3 mois, il était pas très fort \fg \\
 	\og La roue ça sert plus que l'iPhone 11. Peut-être qu'ils auraient pu le vendre à 12 000 euros. Ils sont pas très forts chez Apple \fg \\
@@ -95,7 +128,7 @@
 	\og J'ai vu des élèves ingénieurs... C'est bête ces animaux-là. Ils sont à Centrale Nantes et ils font rien. Enfin ils construisent des cuisines au Pérou. Ils font rien à Centrale. Vous faites bien de pas le passer. \fg \\
 	\og Les élèves en école d'ingénieur ils font pas d'exercices. Ils font... des activités \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Les physiciens sont des abrutits~! \fg \\
 	\og J'ai le droit de médire de BFMTV~? \fg \\
@@ -106,10 +139,12 @@
 	\og Y sont cons ces japonais... \fg \\
 	\og Je médis un peu, mais je les aimes pas. \fg \emph{En parlant des ECS}\\
 	\og Ils essayent de leur apprendre à faire le pivot de Gauss proprement. \fg \emph{En parlant des profs de maths en BCPST} \\
+	\og Ils savent même pas faire deux IPP de suite, c'est normale que je les méprise quand même~! \fg \\
+	\og Est-ce que j'ai taité les footballeur d'abrutis~? OUI~!! \fg \\
 
-\chapter{C'est marrant les maths}
+\section*{C'est marrant les maths}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Les maths je trouve ça ludique \fg \\
 	\og La formule de Taylor ça marche pas bien pour les fractions rationnelles. On dérive une fois, ça va, on dérive deux fois, on vomit \fg \\
@@ -130,7 +165,7 @@
 	\og Vous faites une soirée ce soir~? Chacun vient avec sa loi et vous essayez de retrouver la loi totale \fg \\
 	\og Partie 3.3: je suis content d'être en MP \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Je vais vous tuer avec 35 balles. Voila. C'est surjectif. Si j'ai moins de 35 balles, ah bah je vais pas tous vous tuer... Faut pas exégérer non plus~! \fg \\
 	\og Par théorème des dominos... \emph{plus bas} c'est la récurrence... \fg \\
@@ -141,10 +176,11 @@
 	\og Ce qu'il y a de bien avec les voisinages... C'est que ce sont des voisinages. \fg \\
 	\og Ce seront des matrices miam miam \fg \\
 	\og Et là, le $\sin (nx)$ s'énerve, comme moi... \fg \\
+	\og À moins de faire comme Euler et les gens comme ça~: n'importe quoi et à la fin ça marche. \fg \\
 
-\chapter{Les élèves c'est bizarre}
+\section*{Les élèves c'est bizarre}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Vous ne respectez pas les lois de la thermodynamique~? \fg \\
 	\og Vous le direz à votre psychiatre : "mes amis pour la vie c'est les complexes" \fg \\
@@ -153,17 +189,20 @@
 	\og Vous m'emmerdez avec votre passion du théorème des gendarmes. Ma passion c'est les valeurs absolues! \fg \\
 	\og Vous ne pensez rien, c'est gênant. \fg \\
 	\og Je peux pas vous dire pourquoi vous n'y arrivez pas~! Il faut aller voir un psychiatre~! Vous avez peut-être été battu pas des exponentielles quand vous étiez petits \fg \\
+	
+	\subsection*{2021 -- 2022}
+	\noindent \og Ça veut dire que poser vos fesses sur rayon [de convergence]~? C'est pas une bonne idée... \fg \\
  
-\chapter{Ballecouilles}
+\section*{Ballecouilles}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
  
 	\noindent \og D'accord, on s'en fout \fg \\
 	\og Là il y en a qui vont me dire "oui mais si $j = 1$ ça marche pas blablabla..." NE M'EMMERDEZ PAS! \fg \\
 	\og J'ai toujours pas fait le cours, il y a pas de cours \fg \\
 	\og J'ai pas compris ce que vous m'avez dit mais vous avez raison \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Moi, la bienveillance, ça m'emmerde. \fg \\
 	\og Moi, j'ai des voitures pourries~: ça ne m'embête pas d'emboutir une voiture... \fg \\
@@ -176,9 +215,9 @@
 	\og Ça vous emmerde, c'est chiant... Je m'en fout~! \fg \\
 	\og Vous direz que j'ai insulté vot' papa ou vot' maman. \fg \\
 
-\chapter{Le saviez-vous~?}
+\section*{Le saviez-vous~?}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Vous trouvez que ça existe les entiers? Bah non, ça existe pas les entiers~!! \fg \\
 	\og Ça on vous le dit pas, mais dans 4 milliards d'années le soleil il s'éteint, et ça, ça me fait peur \fg \\
@@ -195,7 +234,7 @@
 	\og D'après les profs de SI, les pyramides elles s'écroulent: elles sont trop lourdes pour leur propre poids. Heureusement les Egyptiens avaient pas le cours. \fg \\
 	\og Fabius il a été reçu en sup à Normal Sup, en plus il était déjà riche. Comme quoi les allemands avaient pas tout piqué. \fg \\
 	
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Ce qu'il fait peur dans la vie c'est les centrales nucléaires. \fg \\
 	\og BOUM~! Ça explose~! C'est le principe d'une centrale nucléaire. \fg \\
@@ -215,9 +254,9 @@
 	\og Tous les joueurs de foot sont des abutis... Bon, aller, y en a peut-être un... \emph{marque une pause} Faut chercher quand même. \fg \\
 	\og Êvitez de manger de la peinture~! Oooh~! Un beau sujet de TIPE~! \fg \\
 
-\chapter{Je suis fort quand même}
+\section*{Je suis fort quand même}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og J'ai écrit des bêtises. Bon, c'est juste \fg \\
 	\og Rohh j'suis un génie \fg \\
@@ -229,7 +268,7 @@
 	\og On va m'accuser de devinisme \fg \emph{écrit la solution avant de faire l'exercice} \\
 	\og Je peux vous la faire de manière pédante~! "Nous avons un morphisme d'algèbre.". Bon, ça veut dire que tout va bien. \fg \\
 	
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Je vous ai appris à avoir peur~! \fg \\
 	\og Oh lalalala je suis fort en parenthèses aussi~! J'vais leur dire ça à Pôle Emploi~! \fg \\
@@ -237,9 +276,9 @@
 	\og Quand je vois ça, je vois des choses... J'ai des visions... \fg \\
 	\og Riez pas, c'est bien ce que je dis... \fg \\
 
-\chapter{Et en plus j'ai une vie passionnante}
+\section*{Et en plus j'ai une vie passionnante}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Moi j'ai raté mon permis : j'ai grillé un feu, l'examinateur à pas voulu me le donner, c'est pas gentil, je l'avais pas vu \fg \\
 	\og J'ai regardé les lettres de motivation, il y a une fille qui est mannequin. Moi j'ai dit que j'étais d'accord \fg \\
@@ -255,13 +294,10 @@
 	\og L'épidémie de voitures cassées à touché ma voiture. \fg \\
 	\og Vous avez passé de bonnes vacances~? Moi aussi: une voiture en moins. Il y a pas a dire, deux tonnes à 40km/h, il y a plus rien en face. C'est bon, il y a pas eu de blessés~! \fg \\
 
-\section{2021 -- 2022}
-
-	\noindent \og Qu'est-ce que j'aime bien~? Pas les collègues de physique... Pas les 5/2... LES "OR"~!! \fg \\
 	
-\chapter{Et j'ai des références culturelles}
+\section*{Et j'ai des références culturelles}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Vous vous trouvez bien démuni l'hiver arrivant parce que ça merdouille \fg \\
 	\og Aujourd'hui je vous aime bien, avant je vous ai haï... Voilà ça fait un peu tragédie grecque \fg \\
@@ -269,20 +305,14 @@
 	\og Est-ce que c'est symétrique~? Oui oui d'aprés le théorème du oui-oui. Vous connaissez Oui-Oui~? Vous aussi vous avez été traumatisés~? Il y a pire, il y a Martine, vous connaissez Martine aussi~? Ah Martine c'est... Non je peux pas le dire \fg \\
 	\og C'est beau, non~? C'est pour ça que pour Leibniz tout va bien dans le meilleur des mondes. Et Guernica c'était peut être des méchants \fg \\	
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Comment ça s'appelle quand on dit "intrusion malveillante" plutôt que "les sales terroristes qui vont nous couper la tête"~? Ah oui~! Un euphémisme~! \fg \\
- 
-\chapter{De Carlos Ghosn}
+	\og Tire-larigot... Ça veut dire quoi "Larigot"~? Hein~? Larigot de mouton~?? \fg \\
 
-\section{2020 -- 2021}
+\section*{Vive le prosélytisme~!} 
 
-	\noindent \og Si Carlos Goshn il multiplie sa fortune par 1,01 tous les ans et que vous multipliez la vôtre par 1,1 vous allez le dépasser... Mais il sera sorti de prison avant \fg \\
-	\og Regretterez pas de pas avoir Polytechnique, regardez Carlos Goshn : il est en prison. Il est bête, il a 500 millions il en veut 10 de plus. Si ça avait été un footeux on aurait compris, ils sont cons \fg \\
-
-\chapter{LV3 catholicisme} 
-
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
  
 	\noindent \og Le bon Dieu dans son immense mansuétude à décidé de faire un critère pour savoir qui doit être ingénieur ou pas \fg \\
 	\og Le bon Dieu il est pas gentil avec vous et les sorcières non plus \fg \\
@@ -296,14 +326,15 @@
 	\og Dieu existe c'est une évidence~! \fg \\
 	\og Je vous le dit mes bien chers frères... \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 	
 	\noindent \og Qui fait l'éducation morale~!? LES CU-RÉS~!! \fg \\
 	\og Tiens, j'vais m'faire curé~! Y a du boulot en plus ! \fg \\
+	\og Je ne pratique pas les nombres négatifs~: c'est contre ma religion. \fg \\
 
-\chapter{Racisme d'ici et d'ailleurs}
+\section*{Racisme d'ici et d'ailleurs}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Les réfugiés ils pourraient passer les épreuves de l'ENS comme ça ils seraient au chaud pendant 6 heures \fg \\
 	\og Comment vous traduisez «Bouillabaisse» en chinois? Bah on peut pas, ça existe pas! En plus si on leur en donne à manger ils meurent... \fg \\
@@ -318,15 +349,15 @@
 	\og Il y a 17 pavages du plan. Apparemment les arabes le savaient. Salauds d'arabes. \fg \\
 	\og Pourquoi on est de la même espèce que ces esclaves de noirs qui sont pas de la même couleur que nous~? Et pourquoi on est pas la même espèce que Cro Magnon~? \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 	
 	\og Tiens~? Y font des maths en Iran~?? \fg \\
 	\og C'est l'autre arabe là~! Comment il s'appelle~? \fg \\
 	\og Salaud de Russes qui sont venus en France~! \fg \\
 
-\chapter{Politique et totalitarisme}
+\section*{Politique et totalitarisme}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Le pensionnat ça avait du bon, comme les jeunesses nazies. La rigueur ça a du bon \fg \\
 	\og On est envahi par les Klein. Les nazis ont pas fini leur boulot \fg \\
@@ -340,14 +371,16 @@
 	\og Les allemands ils avaient des règles \fg \\
 	\og Moi je suis pour la démocratie. Mais soviétique~! \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 	
 	\og Depuis qu'on a Macron, gauche, droite... c'est compliqué... \fg \\
 	\og Je vais l'appeler $R_{n,N}$... C'est même pas un parti... \fg \\
+	\og Moi, chuis pas un citoyen~: j'ai pas le droit de vote~! \fg \\
+	\og L'égalité, c'est vraiment une mauvaise idée... \fg \\
 
-\chapter{Coach de vie}
+\section*{Coach de vie}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og Vos malheurs viennent d'où~? D'être venu en classe préparatoire~? Oui, bon vous auriez pu aller en psycho aussi \fg \\
 	\og Vous noterez $\sum A_{i,k} B_{k,j}$ dans votre CV, c'est mieux que humanitaire \fg \\
@@ -355,38 +388,48 @@
 	\og Si au lieu de me dire bonjour vous me dites "séries à termes positifs" je suis content \fg \\
 	\og Si vous vouliez réfléchir fallait aller en khâgne, ici on apprend par coeur et on calcul! \fg \\
 
-\chapter{Logique élémentaire}
+	\subsection*{2021-- 2022}
+	
+	\noindent \og Moi, j'aime bien le vice. \fg \\
+	\og Et là, c'est quoi le but~? Le but c'est de dominer~! \fg \\
+	\og Ce côté auto-flaggelation... Hmm... J'adore... \fg \\
 
-\section{2020 -- 2021}
+\section*{Logique élémentaire}
+
+	\subsection*{2020 -- 2021}
 
 	\noindent \og C'est tellement dur que c'est facile \fg \\
 	\og Si il y a pas de problème, il y a pas de problème mais le problème c'est que souvent il y a des problèmes \fg \\
 	\og J'aime bien mettre vocabulaire quand c'est du vocabulaire \fg \\
-	\og La convergence simple c'est simple \fg \\
-	\og Si votre GPS met une heure à trouver le chemin, allez-y à pied \fg \\
+	\og La convergence simple c'est simple. \fg \\
+	\og Si votre GPS met une heure à trouver le chemin, allez-y à pied.\fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Y a une méthode~: c'est de mettre n'importe quoi. Mais ça ne marche pas. \fg \\
 	\og Ah, vous dérivez parce que je vous ai dit de dériver~? Sautez par la fenêtre. \fg \\
 	\og Bon. Maintenant je ne sais pas faire la question 1.b~! Parce que y en a pas~! \fg \\
 
-\chapter{Les "amis" de M.Le Duff}
+\section*{Les "amis" de M.Le Duff}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
-	\noindent \og Je vais faire toc toc à côté \fg Bonjour Mr Pétel, $n² = n(n-1) + n$, association d'idée~?\og et là, vie de merde... \fg espérence, variance\og \fg \\
+	\noindent \og Je vais faire toc toc à côté "Bonjour Mr Pétel, $n^2 = n(n-1) + n$, association d'idée~?" et là, vie de merde... "espérence, variance" \fg \\
 	\og Mme Le Mercier c'est la seule personne que je respecte ici \fg \emph{en parlant de la secrétaire} \\
 	\og Je ne vous aime pas \fg \emph{en parlant de nous} \\
 	\og Mon prof de MP se retournerait dans... Ah non, il est pas mort~! \fg \\
 
-\chapter{Les gentils mots de M.Le Duff}
+	\subsection*{2021 -- 2022}
+
+	\noindent \og Qu'est-ce que j'aime bien~? Pas les collègues de physique... Pas les 5/2... LES "OR"~!! \fg \\
+
+\section*{Les gentils mots de M.Le Duff}
 
 	 \noindent \emph{Aucun contenu trouvé.} \\
  
-\chapter{WTF Random}
+\section*{WTF Random}
 
-\section{2020 -- 2021}
+	\subsection*{2020 -- 2021}
 
 	\noindent \og C'est quoi cette merde~? \fg \\
 	\og On va commencer le cours sur \emph{regarde sa montre} PUTAIN~! \fg \\
@@ -406,8 +449,10 @@
 	\og Let x be a réel... \fg \\
 	\og Il n'y a pas de points pour les performances artistiques aux concours. C'est dommage... \fg \\
 	\og D'abord c'est amazing, c'est incroyable, c'est fabuleux \fg \\
+	\og Si Carlos Goshn il multiplie sa fortune par 1,01 tous les ans et que vous multipliez la vôtre par 1,1 vous allez le dépasser... Mais il sera sorti de prison avant \fg \\
+	\og Regretterez pas de pas avoir Polytechnique, regardez Carlos Goshn : il est en prison. Il est bête, il a 500 millions il en veut 10 de plus. Si ça avait été un footeux on aurait compris, ils sont cons \fg \\
 
-\section{2021 -- 2022}
+	\subsection*{2021 -- 2022}
 
 	\noindent \og Oouuuhh le paquebot, il est booôô... \fg \\
 	\og Elle arrive pas à tout avaler [...] et elle dégueule... \fg \emph{en parlant de sa livebox} \\
@@ -421,6 +466,10 @@
 	\og Dans la vie, quand on réussi un calcul, c'est parce qu'il y a un groupe quelque part qui a fait quelque chose. Mais ça, faut pas le dire. \fg \\
 	\og Les enfants, j'aime pas ça... Ça va polluer tout ça... \fg \\
 	\og C'est à vous que j'ai sauvé la vie~? [...] Bon, j'aurais peut-être pas du... \fg \\
+	\og Y a beaucoup de choses qui ne se marrient pas... \emph{marque une pause} Je suis pas très... moderne. \fg \\
+	\og Et $f_n'$ vous avez trouvé quoi~? \emph{gros blanc dans la salle} Vous trouvez qu'il est tard... Oui, moi aussi. \fg \\
+	\og Vous connaissez la blague~? Trois ingénieurs construisent un pont. Le centralien~: le pont s'écroule, y sait pas pourquoi. Le polytechnicien~: il est plus doué, il a fait des études~! Le pont s'écroule. Mais, il sait pourquoi~! Et le mec des Arts et Métiers ? Ah bah le pont s'écroule pas... mais il sait pas pourquoi~! \fg \\
+	
 	
 
 \end{document}
