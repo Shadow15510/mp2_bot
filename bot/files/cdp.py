@@ -7,11 +7,11 @@ import time
 
 def get_cdp_rss():
     # Récupération de la dernière date
-    lasttime = requests.get(f"https://odyssee.pythonanywhere.com/read/{os.environ['api_token']}").text
+    lasttime = requests.get("https://odyssee.pythonanywhere.com/read/cdp_lasttime").text
     lasttime = time.strptime(lasttime, "%d:%m:%H:%M")
 
     # Connexion au site et stockage du cookie de connexion
-    payload = {"login": os.environ["cdp_login"], "motdepasse": os.environ["cdp_password"], "connexion": 1}
+    payload = {"login": "aroyer", "motdepasse": "M@rtinpecheur15510!cdp", "connexion": 1}
     r = requests.post("https://cahier-de-prepa.fr/mp2-malherbe/ajax.php", data=payload)
     cookies = {"CDP_SESSION": r.cookies["CDP_SESSION"]}
 
@@ -28,8 +28,9 @@ def get_cdp_rss():
         description = description.text
 
         doc_time = time.strptime(pub_date, "Publication le %d/%m à %Hh%M")
+        start_time = time.strptime("01:08:00:00", "%d:%m:%H:%M")
 
-        if doc_time > lasttime and "Document" in description:
+        if doc_time > lasttime and doc_time < start_time and "Document" in description:
             doc_times.append(doc_time)
 
             title = document.select_one("a")
@@ -43,5 +44,5 @@ def get_cdp_rss():
 
     if rss:
         lasttime = max(doc_times)
-        requests.get(f"https://odyssee.pythonanywhere.com/send/{os.environ['api_token']}/{time.strftime('%d:%m:%H:%M', lasttime)}")
+        requests.get(f"https://odyssee.pythonanywhere.com/send/cdp_lasttime/{time.strftime('%d:%m:%H:%M', lasttime)}")
         return rss
