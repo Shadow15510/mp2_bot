@@ -44,5 +44,5 @@ def get_cdp_rss():
 
     if rss:
         lasttime = max(doc_times)
-        requests.get(f"https://odyssee.pythonanywhere.com/send/{os.environ["api_token"]}/{time.strftime('%d:%m:%H:%M', lasttime)}")
+        requests.get(f"https://odyssee.pythonanywhere.com/send/{os.environ['api_token']}/{time.strftime('%d:%m:%H:%M', lasttime)}")
         return rss
